@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { ReactMediaRecorder } from 'react-media-recorder';
 import './App.css';
 
 function App() {
+  const [audioBlobUrl, setAudioBlobUrl] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+        <ReactMediaRecorder
+          audio
+          render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
+            <div className="content-container">
+              <div className="audio-container">
+              {mediaBlobUrl && (
+                  <audio
+                    src={mediaBlobUrl}
+                    controls
+                  />
+                )}
+              </div>
+              <div className="button-container">
+                <p>{status}</p>
+                <button onClick={startRecording} disabled={status === 'recording'}>
+                  Start Recording
+                </button>
+                <button onClick={stopRecording} disabled={status === 'idle'}>
+                  Stop Recording
+                </button>
+              </div>
+            </div>
+          )}
+          onStop={(blobUrl) => setAudioBlobUrl(blobUrl)}
+        />
     </div>
   );
 }

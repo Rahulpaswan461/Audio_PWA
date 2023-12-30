@@ -1,25 +1,39 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
+  "name": "AudioPulse",
+  "short_name": "Audio",
+  "theme_color": "#136eb7",
+  "background_color": "#0a4e84",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "scope": "/",
+  "start_url": "/"
+  ,
+   "icons":[
+           {
+              "src":"maskable_192.png",
+              "sizes":"192x192",
+              "type":"image/png",
+              "purpose":"Any maskable"
+           },
+           {
+             "src":"Audio_192.png",
+             "sizes":"192x192",
+             "type":"image/png"
+           },
+           {
+            "src":"Audio_256.png",
+            "sizes":"256x256",
+            "type":"image/png"
+          },
+          {
+            "src":"Audio_384.png",
+            "sizes":"384x384",
+            "type":"image/png"
+          },
+          {
+            "src":"Audio_512.png",
+            "sizes":"512x512",
+            "type":"image/png"
+          }
+
+   ]
 }
